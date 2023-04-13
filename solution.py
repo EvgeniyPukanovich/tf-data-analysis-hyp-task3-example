@@ -9,5 +9,5 @@ def solution(x: np.array) -> bool: # Одна или две выборке на 
     # Это будет вашим решением
     # Не меняйте название функции и её аргументы
     alpha = 0.06
-    p_val = ztest(x, value=500, alternative='smaller')[1]
-    return True if p_val <= alpha else False # Ваш ответ, True или False
+    p = (ztest(x, value = 500,alternative = 'larger')[1])/2
+    return p < alpha # Ваш ответ, True или False
